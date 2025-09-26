@@ -1,0 +1,202 @@
+------------------------------------- AULA 04 ------------------------------------------------------
+
+
+Metodos acessoers
+Public = Indica que qualquer um pode acessar o elemento
+Private = Indica que somente a classe pode acessar
+Protected = Indica que somente a classe e seus filhos podem acessar
+Default = Indica que somente a classe, seus filhos e as classes no mesmo packege podem acessar
+
+
+
+					GETTERS E SETTERS
+São métodos que a classe disponibliza, pra quem quiser modifcar do lado de forar, poder modificar ou obter informações sobre os atributos, já que em Java, a grande maioria é private
+mas esses métodos podem passar por uma validação internamente dentro da classe.
+Vai ser assim
+	public void setNome
+		this.nome = nome   = Alguém do lado de fora, agora vai poder trocar o nome
+
+"Void signfica que nao vai ter retorno nenhum"
+
+public String getNome
+return this.nome:
+
+
+
+
+					Construtores
+O padrão é
+Public Carro (){} (O nome "Carro é um exemplo")
+Se eu n crio um construtor, o Java cria pra mim
+Mas, posso ter um personalizado
+Public Carro (String modelo, Integer ano, String cor){
+}
+Quando vc cria um construtor, o Padrão nao existe mais
+
+
+
+		Formas de escrever
+PascalCase; NotaFiscal.java  == Nomes de arquivo, classe e construtor dda classe
+camelCase; notaFiscal	== atributos
+
+
+
+
+
+
+------------------------------- AULA 05 ---------------------------------
+Tipos de dados
+				PRRIMITIVOS
+Se eu criar uma variavel/ objeto, eu preciso criar de algum tipo. E temos tipos primitivos.
+
+byte = é um tipo de byte ue recebe só byte. menor byte -128 e maior 127
+Short = Campo de números pequenos, menor é -32768 e maior 32768
+Integer = tipos inteiros, ver no VScode os menores e maiores números daqq pra frente.
+Long = são valorers muitos grandes. Precisa de um L no final
+Float = Pra valores flutuantes (elevados) Precisa colocar um F
+Double = Tipo float, mas pra valores maiores. Double tem uma precisão muito maior
+Long, Double e Integerr são os mais usados.
+
+Existe também 
+String = Armazenar textos
+char = Textos muitos pequenos, quando queremos guardar algum caracter, e colocamos entre aspas simples
+Boolean = Tipo de dado verdadeiro ou falso. True or false
+
+
+
+
+------------------------------------ AULA 06 ---------------------------------------------------------------------
+
+Criando um Banco Digital
+Colocamos o número da agência como String, porque pode começar com 0 "001" e números inteiros não começam com 0, para nós colocarmos Integer
+Tiramos o Set do Saldo, pq o saldo n é algo que o usuários pode alterar.
+Tiramos o set do construtor
+
+Até a primeira parte, fizemos.
+Atribtuos = passo a passo. O que vai ter dentro da conta bancária
+Construtores = Forma em que ela vai ser construida
+Getters e Setters = métodos de acesso à esses atributos
+Métodos = Recurso dentro de objeto ou classe que transformam ou geram comportamentos.
+
+Criamos um método para depositar
+public void depositar (DOuble valor). Pq o void? pq ele não vai me devolver nada. Só vai executar algo.
+o Double p usa casa decimal, e é mais preciso.
+Mas, tenho que pegar o valor, e somar na minha conta, né?
+Então
+this.saldo = this.saldo + valor
+De uma forma simplificada fica
+this.saldo += valor;
+esse +=, signiffica que o saldo ta recebendo ele mesmo mais o valor
+
+Criamos uma constate. Constante, diferente de variável, é algo que n]ao muda.
+Constante tem que ser escrita com letras maiúsculas, e se for separar, tem que ser separada por underline
+
+Usamos uma exceção. Quando trabalhamos com validações que não são atendidas, usamos uma excecção. Vale lembrar que usamos if, obviamente.
+
+Fizemos de sacar tb. Então
+Depositar vai verificar se o valor de depósito é menor que o valor minimo. Se for, nao pode acontecer depósito. Se nao, efetua o depósito somando o valor ao saldo.
+Sacar verifica se o valor é maior que o saldo da conta. Se for, manda mensgaem de saldo insuficiente. Se nao, remove o valor de saque do saldo atual e retorna o valor sacado ao usuário.
+
+
+
+------------------------------------ Aula 07 -----------------------------------------------------
+
+Vamos fazer uma transferência.
+Se vc for ver, eu coloquei no código para efetuar um saque na conta atual  
+this.sacar(valor); 
+
+Na outra linha ficou  para efetuar o deposito na conta destino
+ contaDestino.depositar(valor);
+
+Vamos criar outras conta (Corrente, poupança) Com o conceito de herança
+Criei uma conta corrente e quero que tudo que tenha na Conta Bancaria tenha nela tb. 
+
+
+
+public class ContaCorrente extends ContaBancaria
+Mas, vai dar um erro, pq precisa de um construtor. É só dar um Ctrl ponto e add o construtor
+Se vc ver, ele chama o método super. Que ele ta passando os valores pro pai dele, que seria o ContaBancaria.
+Então por baixo ele cria uma Conta Bancaria
+
+
+------------------------------- AULA 08 ---------------------------------
+
+
+No banco, quando criamos uma conta, precisamos de um tipo.
+Então, eu quero bloquear pra ngm conseguir instanciar uma classe que foi criada como herança
+Vou deixar a classe de um jeito em que as demais nao consigam instanciar.
+A Conta Bancaria vai ser um modelo para as outras, vai ser abstrata.
+Pra isso, temos o conceito de "Abstract" qque é uma classe que serve somente para fazer uma abstração, ñ é um objeto completo, mas serve como referência para que alguém use essa classe como herança para obter os dados dela e n pode ser instanciada
+Dps, Criamos um método prar crriar a data de abertura da conta
+
+Para colocar datas no formato brasileiro.
+Vamos usar o SimpleDateFormat
+
+dd/MM/YYY  HH:mm
+
+Recurso Static, não obriga vc instanciar o objeto. Quando eu tenho algo que deva funcionar de forma estática eu devo usar ele
+Métodos estáticos nao armazenam valorr. Só fazem conversão ou executam algo.
+
+--------------------------------- AULA 09 -----------------------------------------------------------
+Vamos fazer um extrato bancário. Um extrato bancário é composto por movimentações bancárias.
+Ent, preciso ter algo que possa ser a movimentação.
+Precisamos também, ter uma lista de movimentações.
+Tiramos a data do cosntrutor, e transformamos em um new Date(). Com o objetivo de ser captada na hora da movimentação
+
+Qnd fizemos da primeira vez, não mostrou. Só o número do pacote etc.
+Acontece pq qnd eu chamo o println e chamo a classe, ele chama o método toString, que é um método de todo objeto.
+Esse método tenta transformarr o objeto em uma String.
+Ent, é comum a gnt sobreescrever ele na progrramação (substituir o código)
+
+Para sobreescrever, criamos outro método chamado toString também. Mas, em cima, colocamos @Override. Override quer dizer que vc esta sobreescrevendo o métoo aNTIGO
+/n pra quebrrar linha
+
+
+
+
+
+------------------------------ AULA 10 -------------------------------------------------
+
+Agora que temos as movimentações, precisamos salvá-las em uma lista. Um array, normalmente.
+
+O ArrayList é um objeto genérico que sabe guardar qlqr coisa dentro dele. Eu digo o que eu vou guardar dentro dele com <>
+
+não é pra colocar no construtor, mas tive que fazer
+
+this.movimentacoes = new ArrayList<Movimentacao>();
+Pra nao dar uma exception de nullpointerException
+
+
+
+
+
+Movimentacao movimentacao = new Movimentacao("Abertura de conta", saldoInicial); 
+Isso é a nossa primeira movimentação, de abertura da conta bancaria
+
+
+this.movimentacoes.add(movimentacao);
+Coloca embaixo pra salvarr a movimentação dentro do array de movimentações
+
+Agora, todo lugar, eu vou lançar uma nova movimentação
+
+Se for ver, em depositar eu ffiz dps do if. Pq se o if falhar, eu nao preciso fazer nenhuma movimentação
+Sempre fazer antes do RETURN
+
+Vamos criar uma lógica pra impressão de extrato.
+
+Método abstrato ñ tem implementação. Quem for herdar da classe, vai ter que se virar e implementar esse cara.
+Pra implementar em outro método, CTRL ponto em cima é implementa.
+
+foreach = tipo de for, laço de repeticção executado em cima de um Array. Enquanto algo estiver dentrro de um Array, ele vai tomar uma ação
+
+Quano criar algo como privado, só a conta bancária pode mexer.
+Mas, nosso array movimentaçoes ta privado. E agr? Eu quero q os filhos e ContaBancaria consigam mexer.
+Troca de private pra protected
+o foreach vai ficarr
+for ( tipo nome : Array)
+se le
+pra cada movimentação dentro de .... eu quero fazer..... e aí vai ficar em uum looping enquanto estiver movimentação ali dentro
+
+Metodo abstract obrriga quem está herdando da classe implementar esse método
+
+ou seja, podemos ter classes ou métodos abstratos.
