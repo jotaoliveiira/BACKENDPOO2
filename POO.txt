@@ -200,3 +200,23 @@ pra cada movimentação dentro de .... eu quero fazer..... e aí vai ficar em uu
 Metodo abstract obrriga quem está herdando da classe implementar esse método
 
 ou seja, podemos ter classes ou métodos abstratos.
+
+
+
+-------------------------------------- AULA 11 ----------------------------------------
+Deixamos o banco de lado e criamos uum hotel
+Fizemos pessoas. Clientes, Funcionarios. Cada pessoa tem que saber executar uma função.
+Pra cada um ter um comportamento diferente, nós vamos usar o conceito de interfaces
+interfaces são contratos que podem ser implementados nas classes para gerar comportamentos específicos.
+Quando eu mudo de classe, eu mostro que aqlo é uma abstração
+
+Fizemos varias pessoas, e entre elas a camarerira. Toda camareira, tem que ter as caracteristicas ditas no interface, ent, o model camareira tem que herdar da ICamareira
+Pra implementar uma interface é so colocar a palavra implements e o nome do objeto
+
+Pra implementar mais de um, separa por vírgulas
+
+Com interface, eu posso ter o comportamento replicado pra outras classes.
+
+Classe abstrata pode ter atributos e implementações
+
+Interfaces são contratos, quem quiser implmentar tem qque conseguir fazer.
