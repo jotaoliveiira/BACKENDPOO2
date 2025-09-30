@@ -1,6 +1,8 @@
 import src.model.Camareira;
 import src.model.Cliente;
+import src.model.EnumTipo;
 import src.model.Gerente;
+import src.model.Quarto;
 import src.model.Recepcionista;
 
 public class App {
@@ -24,6 +26,19 @@ public class App {
 
         gerente1.atenderOTelefone();
         gerente1.falarIngles();
+
+        Quarto quarto1 = new Quarto();
+        quarto1.setNumero("206A");
+        quarto1.setValor(100.0);
+        quarto1.setTipo(EnumTipo.MASTER);
+
+        Quarto quarto2 = new Quarto();
+        quarto2.setNumero("207A");
+        quarto2.setValor(200.0);
+        quarto2.setTipo(EnumTipo.PRESIDENCIAL);
+
+        System.out.println(quarto1.getTipo());
+        System.out.println(quarto2.getTipo().getValor() );
     }   
 
 }
