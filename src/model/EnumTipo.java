@@ -3,8 +3,8 @@ package src.model;
 public enum EnumTipo {
     
     BASICO ("báisco"),
-     MASTER ("Master"), 
-     PRESIDENCIAL ("Suite presidencial");
+    MASTER ("Master"), 
+    PRESIDENCIAL ("Suite presidencial");
 
     private String valor;
 

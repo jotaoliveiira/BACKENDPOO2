@@ -220,3 +220,40 @@ Com interface, eu posso ter o comportamento replicado pra outras classes.
 Classe abstrata pode ter atributos e implementações
 
 Interfaces são contratos, quem quiser implmentar tem qque conseguir fazer.
+
+
+
+------------------------------------- AULA 12 -----------------------------------------------
+Colocamos o número do quarto como String, pq pode ser por exemploo "201B"
+Colocamos o tipo do quarto. Seria legal se fosse uma estrutra, pq se forr uma String, teriamos que decorar todos os tipos sem receber nenhum tipo de opção
+VAmos criar uma estrtura para nos dar opções.
+no lugar de class, colocar enum.
+Enum = estrutura, enumerador.
+
+ BASICO ("báisco"),
+ MASTER ("Master"), 
+ RESIDENCIAL ("Suite presidencial");
+Foram os quartos criados.
+Quando criamoos um ENUM, definimos as opções dentro do numerador. O de caixa alta é uma constante, do valor é de caixa baixa
+Quando terminar, SEMPRE colocar ;
+Pra aqlo funcionar, eu precisaria de.
+
+private String valor;
+
+E dps, criar um construtor privado. Que quer dizer que vai ser usado pelo próprio enum.
+ private EnumTipo (String valor)
+        this.valor = valor;
+
+public String getValor() 
+        return valor;
+
+Eu tenho 3 coisas que podem ser meu ENUM, né?
+
+    
+
+
+
+------------------------------------- AULA 13 ---------------------------
+
+
+
