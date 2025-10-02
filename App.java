@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import src.model.Camareira;
 import src.model.Cliente;
 import src.model.EnumTipo;
@@ -40,10 +42,18 @@ public class App {
         System.out.println(quarto1.getTipo());
         System.out.println(quarto2.getTipo().getValor() );
         */
-        Cliente cliente1 = new Cliente("Manoel Da Silva", "2199998888", "12345678901");
-        Cliente cliente2 = new Cliente("FFulano", "2199998888", "12345678901");
-        Cliente cliente3 = new Cliente("Deutrano", "2199998888", "12345678901");
-        Cliente cliente4 = new Cliente("Beutrano", "2199998888", "12345678901");
+        Cliente cliente1 = new Cliente("Manoel Da Silva", "2199998888", "12345678901", 42);
+        Cliente cliente2 = new Cliente("Fulano", "2199998888", "12345678901" , 18);
+        Cliente cliente3 = new Cliente("ciclano", "2199998888", "12345678901" , 21);
+        Cliente cliente4 = new Cliente("Beutrano", "2199998888", "12345678901", 34);
+        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+        clientes.add(cliente3);
+        clientes.add(cliente4);
+
+        clientes.stream().count();
+        clientes.stream().limit(2);
     }   
 
 }

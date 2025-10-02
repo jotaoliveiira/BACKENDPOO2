@@ -247,13 +247,19 @@ E dps, criar um construtor privado. Que quer dizer que vai ser usado pelo própr
 public String getValor() 
         return valor;
 
-Eu tenho 3 coisas que podem ser meu ENUM, né?
-
-    
 
 
 
+
+   
 ------------------------------------- AULA 13 ---------------------------
 
+Adicionamos idade. Só que a classe " pai" ñ precisa de idade. É algo específico do cliente.
+Aí, coloquei. this idade = idade
+Fizemos um array
 
+size = quiser saber quantos clientes tem
+stream().count faz o mesmo
 
+Podemos limitar o que vai ser retorrnado tb.
+stream.limit = vai retornar apenas 2 elemnetos da lista atual
