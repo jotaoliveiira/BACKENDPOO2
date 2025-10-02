@@ -259,7 +259,36 @@ Aí, coloquei. this idade = idade
 Fizemos um array
 
 size = quiser saber quantos clientes tem
+
+		Stream = Uma coleçã que nos permite fazer interações
 stream().count faz o mesmo
 
 Podemos limitar o que vai ser retorrnado tb.
 stream.limit = vai retornar apenas 2 elemnetos da lista atual
+skip = pular posição
+LEMBRAR ARRAY começa na pos 0
+sorted = ordenar.
+filter = Pra cada elemento do array, eu quero uma ação.
+
+clientes.stream().filter(c -> c.getIdade()> 25); // Aq ele ve quais idades são maiores que 25  e vai salvar as que forem
+
+Se eu quisesse printar, e ñ retornar um resultado eu faço
+invés ded ;, .forEach
+
+.forEach(c -> System.out.println(c.getNome()));
+esse "c" é de "cliente", ñ tem nd av c sintáse do código
+
+
+
+.filter(c ->c.getNome().contains("Rodrigues")) // PRa pessooas que tem Rodrigues no nome
+
+
+
+ .filter(c ->c.getNome().startsWith("B"))// Começa com a letra B
+
+
+map = faz mapeamento
+ clientes.stream().map(c -> c.getNome()); cada cliente ele vai devolver só nome.
+Ent]a, invés de devolver um bjeto de cliente, ele devolve de nome.
+Pode ser escritoo dessa forrma
+ clientes.stream().map(Cliente::getnome));

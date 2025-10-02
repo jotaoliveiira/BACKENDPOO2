@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import src.model.Camareira;
 import src.model.Cliente;
@@ -44,16 +45,48 @@ public class App {
         */
         Cliente cliente1 = new Cliente("Manoel Da Silva", "2199998888", "12345678901", 42);
         Cliente cliente2 = new Cliente("Fulano", "2199998888", "12345678901" , 18);
-        Cliente cliente3 = new Cliente("ciclano", "2199998888", "12345678901" , 21);
-        Cliente cliente4 = new Cliente("Beutrano", "2199998888", "12345678901", 34);
+        Cliente cliente3 = new Cliente("ciclano Rodrigues", "2199998888", "12345678901" , 21);
+        Cliente cliente4 = new Cliente("Beutrano Rodrigues", "2199998888", "12345678901", 34);
         ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-        clientes.add(cliente1);
-        clientes.add(cliente2);
-        clientes.add(cliente3);
-        clientes.add(cliente4);
+        clientes.add(cliente1);//0
+        clientes.add(cliente2);//1
+        clientes.add(cliente3);//2
+        clientes.add(cliente4);//3
 
         clientes.stream().count();
-        clientes.stream().limit(2);
+         clientes.stream()
+         .limit(2)
+         .forEach(c -> System.out.println(c.getNome()));
+
+
+         clientes.stream()
+         .skip(2)
+        .forEach(c -> System.out.println(c.getNome()));
+
+       // var resultado3 = clientes.stream().sorted();
+
+         clientes.stream()
+         .filter(c -> c.getIdade() > 25)
+        .forEach(c -> System.out.println(c.getNome()));
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        clientes.stream()
+         .filter(c ->c.getNome().contains("Rodrigues"))
+        .forEach(c -> System.out.println(c.getNome()));
+
+
+        clientes.stream()
+         .filter(c ->c.getNome().startsWith("B"))
+        .forEach(c -> System.out.println(c.getNome()));
+
+        
+        clientes.stream().map(Cliente ::getNome);
+        
+
     }   
 
 }
