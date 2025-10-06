@@ -1,0 +1,6 @@
+SOLID = termo/acrônimo de 5 principios da orientação a objetos.
+S = Single responsablity principle. Principio dde responsabilidade unica.
+O = Open-closed principle. Principio do aberto e fechado.
+L = Liskov Substitution Principle. Principio de substituição de Liskov.
+I = Interface Segregation Principle. Principio ded segregação da interface
+D = Dependency Inversion Principle. Principio da inversão de dependencias

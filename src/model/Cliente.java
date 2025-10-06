@@ -1,6 +1,8 @@
 package src.model;
 
-public class Cliente extends Pessoa {
+import src.interfaces.IFalarIngles;
+
+public class Cliente extends Pessoa implements IFalarIngles{
 
 
 
@@ -14,6 +16,11 @@ public class Cliente extends Pessoa {
     }
     public void setIdade(Integer idade) {
         this.idade = idade;
+    }
+    @Override
+    public void falarIngles() {
+        // TODO Auto-generated method stub
+       
     }
 
 }

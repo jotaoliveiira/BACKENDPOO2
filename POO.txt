@@ -292,3 +292,19 @@ map = faz mapeamento
 Ent]a, invés de devolver um bjeto de cliente, ele devolve de nome.
 Pode ser escritoo dessa forrma
  clientes.stream().map(Cliente::getnome));
+
+
+
+
+
+
+------------------------ AULA 14 --------------------------------
+SOLID = termo/acrônimo de 5 principios da orientação a objetos.
+Pode ser aplicado em qlqr tecnologia.
+S = Single responsablity principle. Principio dde responsabilidade unica. Ou seja, qnd criar uma classe, ela deve ter só uma responsabilidade.
+O = Open-closed principle. Principio do aberto e fechado. Quando vc tem algo criado e ja foi usado por outras coisas, devo mate-lo fechado. Aberto pra extenção, fechado para modificação
+L = Liskov Substitution Principle. Principio de substituição de Liskov. Uma classe derivada deve ser substituida pela sua classe base
+I = Interface Segregation Principle. Principio ded segregação da interface. Uma classe nao deve ser forçada a implementar interfaces e métodos que nao vai ultilizar.
+D = Dependency Inversion Principle. Principio da inversão de dependencias. Injetar a dependencia. Injetar como parametro.
+Depender de Abstrção, não de uma classe.
+
